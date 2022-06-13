@@ -34,11 +34,11 @@ function titleClickHandler(event){
 
   /* get 'href' attribute from the clicked link */
 
-const articleSelector = 'href' ;
+  const articleSelector = 'href' ;
 
- let href = clickedElement.getAttribute(articleSelector)
+  let href = clickedElement.getAttribute(articleSelector)
 
- console.log (href);
+  console.log (href);
 
 
   /* find the correct article using the selector (value of 'href' attribute) */
@@ -52,7 +52,7 @@ const articleSelector = 'href' ;
   /* add class 'active' to the correct article */
 
   
-    targetArticle.classList.add('active');
+  targetArticle.classList.add('active');
   
 
 }
@@ -61,20 +61,17 @@ const articleSelector = 'href' ;
 
 
 
-
-
-
-
 const optArticleSelector = '.post',
-      optTitleSelector = '.post-title',
-      optTitleListSelector = '.titles';
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
+  optArticleTagsSelector = '.post-tags .list';
 
 function generateTitleLinks(){
 
 
   /* remove contents of titleList */
 
-const titleList = document.querySelector(optTitleListSelector).innerHTML='' ;
+  const titleList = document.querySelector(optTitleListSelector).innerHTML='' ;
  
 
 
@@ -122,19 +119,48 @@ const titleList = document.querySelector(optTitleListSelector).innerHTML='' ;
    
   }
 
-    titleList.innerHTML= html ;
+  titleList.innerHTML= html ;
 
-    const links = document.querySelectorAll('.titles a');
+  const links = document.querySelectorAll('.titles a');
 
-    for(let link of links){
-      link.addEventListener('click', titleClickHandler);
-    }
+  for(let link of links){
+    link.addEventListener('click', titleClickHandler);
+  }
     
-
-
 
 }
 
 
-
 generateTitleLinks();
+
+
+
+
+function generateTags(){
+
+/* find all articles */
+
+  /* START LOOP: for every article: */
+
+    /* find tags wrapper */
+
+    /* make html variable with empty string */
+
+    /* get tags from data-tags attribute */
+
+    /* split tags into array */
+
+    /* START LOOP: for each tag */
+
+      /* generate HTML of the link */
+
+      /* add generated code to html variable */
+
+    /* END LOOP: for each tag */
+
+    /* insert HTML of all the links into the tags wrapper */
+
+  /* END LOOP: for every article: */
+}
+
+generateTags();
