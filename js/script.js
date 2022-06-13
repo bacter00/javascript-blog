@@ -57,11 +57,6 @@ const articleSelector = 'href' ;
 
 }
 
-const links = document.querySelectorAll('.titles a');
-
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-}
 
 
 
@@ -83,26 +78,24 @@ const titleList = document.querySelector(optTitleListSelector).innerHTML='' ;
  
 
 
+  /* for each article  
+  zamiast .post  optArticleSelector ? */
 
+  const articles = document.querySelectorAll(optArticleSelector) ;
 
+  let html = '';
 
+  console.log (html);
 
-  /* for each article  - brakuje petli*/
-
-  const articles = document.querySelectorAll('.post') ;
-
-console.log (articles);
+  for (let article of articles) {
 
   
+    /* get the article id 
+    cos tu jest nie tak */
 
 
-    /* get the article id   - znowu cos zle*/
-
-    const articleId = 'id'
-    let id = '1'
-
-console.log = (articleID);
-
+    const articleId = 'id' ;
+    let id = article.getAttribute(articleId);
 
 
 
@@ -114,16 +107,34 @@ console.log = (articleID);
 
   
   
-  
-  
     /* create HTML of the link */
 
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
  
-    console.log (linkHTML)
+    console.log (linkHTML) ;
+
+
 
     /* insert link into titleList */
 
+    html = html + linkHTML;
+
+   
+  }
+
+    titleList.innerHTML= html ;
+
+    const links = document.querySelectorAll('.titles a');
+
+    for(let link of links){
+      link.addEventListener('click', titleClickHandler);
+    }
+    
+
+
+
 }
+
+
 
 generateTitleLinks();
